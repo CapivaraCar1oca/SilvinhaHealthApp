@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView, TextInput} from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, TextInput, TouchableOpacity} from 'react-native';
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function App() {
   return (
@@ -14,10 +15,27 @@ export default function App() {
           <Text style={styles.label}>Altura</Text>
           <TextInput
             style={styles.input}
-            placeholder='Ex.'
+            placeholder='Ex. 1.70'
             keyboardType='numeric'
           ></TextInput>
         </View>
+
+        <View style={{ marginTop: 25 }}>
+          <Text style={styles.label}>Peso</Text>
+          <TextInput
+            style={styles.input}
+            placeholder='Ex. 56Kg'
+            keyboardType='numeric'
+          ></TextInput>
+        </View>
+
+        <TouchableOpacity 
+          style={styles.button}
+          onPress={() => alert("OREIIAAAAAAAAAAAA")}
+        >
+          <Ionicons name="calculator-sharp" size={24} color="#edf2f4" />
+          <Text style={styles.text}>Calcular</Text>
+        </TouchableOpacity>
 
       </View>
       <StatusBar style='light' />
@@ -48,14 +66,14 @@ const styles = StyleSheet.create({
   content:{
     flex: 1,
     padding: 40,
-    widht:'100%',
+    width:'100%',
     backgroundColor:'EDF2F4'
     
   },
   subtitle:{
     textAlign: 'center',
     fontSize: 24,
-    color:'D90429',
+    color:'#D90429',
     fontWeight:'bold',
     marginBottom: 40,
   },
@@ -63,11 +81,29 @@ const styles = StyleSheet.create({
     color: '#000',
     fontSize: 18,
   },
-  Input:{
+  input:{
     height: 45,
-    widht:'100%',
+    width:'100%',
     fontSize: 18,
-    borderColor: 'D90429',
-    borderBottomWidht: 1
+    borderColor: '#D90429',
+    borderBottomWidth: 1,
+  },
+
+  button: {
+    width: '100%',
+    paddingVertical: 15,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ef233c',
+    borderRadius: 15,
+    marginTop: 40,
+    marginbottom: 10,
+  },
+  text: {
+    color: '#edf2f4',
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginLeft: 5,
   }
 });
